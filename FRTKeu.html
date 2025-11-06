@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Key Của Bạn</title>
+
+  <script>
+    // --- Danh sách các trang web cần random ---
+const sites = [
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_EBCIXSQOQTSMA-71125-657808716741",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_RSTIOBLHTFKJC-71125-901233103784",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_MTWONFQTZMJHD-71125-760078880947",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_EUQRURZFLPUIV-71125-136071837507",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_QPSJBHDOANXWN-71125-353153034494",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_HFIDJORQDDBFT-71125-333214773837",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_RRGSQLCNKUWHG-71125-071163431163",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XWZCXLAZKBCPC-71125-836674057773",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_NLWMEUNYDANFC-71125-770046907437",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_FPPCKVXZGVNOY-71125-802314472656",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_NZRXQJVBTAWJT-71125-379929670898",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_YLCFMINEZGPJR-71125-919890013098",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_LFLJMLPZHZLTB-71125-355779347473",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_VDXELQANYGTII-71125-031958496964",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_NKNIGHJSNMRFT-71125-407726148300",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_ZZTRCREUAUNPI-71125-500719592944",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_UCYVDEZLUWPUM-71125-960267603734",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_KXZVQSBIWCSYQ-71125-973483391702",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_JCQURIJRQLRGN-71125-837812134878",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_CYPEHPSJFQMNK-71125-077936994923",
+];
+
+    // Hàm random cực nhanh
+    const idx = crypto.getRandomValues(new Uint32Array(1))[0] % sites.length;
+    location.replace(sites[idx]); // chuyển ngay, không cần chờ load
+  </script>
+</head>
+<body>
+</body>
+</html>
