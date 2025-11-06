@@ -3,200 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Error</title>
-
-  <!-- Auto-redirect (thay URL bên dưới thành link Bản 2.0 của bạn) -->
-  <meta http-equiv="refresh" content="15;url=https://example.com/v2">
-
-  <style>
-    /* Reset nhẹ */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body{height:100%;}
-    body {
-      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, #f0f9ff 0%, transparent 10%),
-                  radial-gradient(900px 400px at 90% 90%, #fff7ed 0%, transparent 12%),
-                  linear-gradient(180deg, #0f1724 0%, #071023 100%);
-      color: #e6eef8;
-      -webkit-font-smoothing:antialiased;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 820px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border-radius: 18px;
-      padding: 36px;
-      box-shadow: 0 10px 30px rgba(2,8,23,0.65), inset 0 1px 0 rgba(255,255,255,0.03);
-      backdrop-filter: blur(8px);
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .logo {
-      width:72px;
-      height:72px;
-      margin: 0 auto 18px;
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:22px;
-      background: linear-gradient(135deg,#6366f1,#06b6d4);
-      color:white;
-      box-shadow: 0 6px 18px rgba(99,102,241,0.18);
-    }
-
-    h1 {
-      font-size:28px;
-      line-height:1.15;
-      margin-bottom:12px;
-      color: #f8fafc;
-      letter-spacing: -0.4px;
-    }
-
-    p.lead {
-      color: rgba(230,238,248,0.9);
-      font-size:16px;
-      margin-bottom:20px;
-    }
-
-    p.notice {
-      background: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(6,182,212,0.04));
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:600;
-      color:#dfe7ff;
-      display:inline-block;
-      margin-bottom:22px;
-    }
-
-    .countdown {
-      display:block;
-      margin-top:10px;
-      color: rgba(230,238,248,0.75);
-      font-size:14px;
-    }
-
-    .btn-row {
-      margin-top: 22px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn {
-      appearance:none;
-      border: none;
-      cursor:pointer;
-      font-weight:700;
-      padding:14px 28px;
-      border-radius:12px;
-      font-size:16px;
-      letter-spacing:0.3px;
-      transition: transform .14s ease, box-shadow .14s ease;
-      box-shadow: 0 8px 20px rgba(2,8,23,0.45);
-    }
-
-    .btn-primary {
-      color:#071023;
-      background: linear-gradient(90deg,#a78bfa,#06b6d4);
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(6,182,212,0.12); }
-    .btn-secondary {
-      color:#e6eef8;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .btn-secondary:hover { transform: translateY(-2px); }
-
-    footer.meta {
-      margin-top:18px;
-      font-size:13px;
-      color: rgba(230,238,248,0.6);
-    }
-
-    @media (max-width:520px){
-      .card { padding:20px; border-radius:14px; }
-      h1 { font-size:20px; }
-      .logo { width:56px; height:56px; font-size:18px; }
-      .btn { padding:12px 20px; font-size:15px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="card" role="main" aria-labelledby="title">
-    <div class="logo" aria-hidden="true">Key</div>
-
-    <h1 id="title">App Đang Bảo Trì<br><span style="color:#ffd5a3">Vui Lòng Xóa</span></h1>
-
-    <p class="lead">Và Đợi Bản <strong>2.0</strong> Mới Nhất</p>
-
-    <div class="btn-row">
-      <!-- Thay href thành đường dẫn thực tế của bản 2.0 -->
-      <a id="btnGo" class="btn btn-primary" href="" role="button" aria-label="Chuyển tới bản 2.0">2.0</a>
-
-      <button id="btnCancel" class="btn btn-secondary" type="button">Ở lại trang này</button>
-    </div>
-
-    <span class="countdown" id="countdown">Tự chuyển hướng sau <strong id="sec">7</strong> giây... (nhấn 2.0 để chuyển ngay)</span>
-
-    <footer class="meta" aria-hidden="true">
-      Nếu muốn thay đổi link: chỉnh `href` của nút hoặc giá trị meta refresh trong phần &lt;head&gt;.
-    </footer>
-  </div>
+  <title>Key Của Bạn</title>
 
   <script>
-    // Cấu hình: thay URL ở đây nếu cần (dự phòng cho trường hợp meta refresh không hoạt động)
-    const TARGET_URL = "";
-    // Thời gian đếm ngược (giây) phải khớp với meta refresh phía trên
-    let seconds = 7;
+    // --- Danh sách các trang web cần random ---
+const sites = [
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_WGEKOSZUUVIMH-061125-923723393636",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_DDITSYJSPQGPG-061125-761748916917",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_WTCBEIJGSUJBR-061125-134600262981",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XQELVDTCXDIRL-061125-395399517832",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_SZRQLUOXKVRFP-061125-860217518371",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XITKERWDRFIDK-061125-128350414378",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_QZHGIJHWVMVHV-061125-659904164773",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_LLPAHKJYNLVXJ-061125-297868347707",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_KDFVYHVHBHEHO-061125-938473258598",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_EKXRTLHGIBTNF-061125-804444342456",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_JMLVNHYGYSBTU-061125-458656400641",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_LOXWUKEXVSZWZ-061125-691503211071",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_WNEXMIDCKXTXM-061125-370074123370",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XEEBXCOBHOZJR-061125-601680103649",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_WKQNOCNRVSVSH-061125-327398371459",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_FVTZKEUYXLWGK-061125-020978634341",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XLOQPPESWSBHF-061125-074367560194",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_TZSFYAPPHSHTD-061125-991537708917",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_SQVKXPDADAPHI-061125-213399585259",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_IQGQAXZBSGSCN-061125-919048556514",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_QWHFBMEHCWPCB-061125-080187318823",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XBNWEDEXKQJSU-061125-457910376506",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_UGNYQGCRGJYUS-061125-445323811861",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_OGTHMYGERYJOI-061125-830755960400",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_MROKMMMQOUWNA-061125-228425525992",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_MQRYWWSDHICDJ-061125-389830758336",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_CUKRMNRAXIRXV-061125-783640803882",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_KKADKSMWDEVNP-061125-420191020425",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_ZXGKRGOZSGODE-061125-805424678214",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_YLTVDERMYXJFK-061125-235046865514",
+];
 
-    const secEl = document.getElementById('sec');
-    const countdownEl = document.getElementById('countdown');
-    const btnGo = document.getElementById('btnGo');
-    const btnCancel = document.getElementById('btnCancel');
-
-    // Đồng bộ href
-    btnGo.setAttribute('href', TARGET_URL);
-
-    // Click nút 2.0 sẽ chuyển hướng ngay
-    btnGo.addEventListener('click', function(e){
-      // mặc định <a> sẽ điều hướng, nhưng giữ code để cho trường hợp muốn xử lý JS
-      // window.location.href = TARGET_URL;
-    });
-
-    // Nếu người dùng không muốn chuyển hướng, bấm "Ở lại trang này"
-    btnCancel.addEventListener('click', function(){
-      // Stop auto-redirect: đơn giản là set seconds = Infinity và update thông báo
-      seconds = Infinity;
-      countdownEl.textContent = 'Tự chuyển hướng đã bị hủy. Bạn đang ở lại trang này.';
-    });
-
-    // Đếm ngược hiển thị
-    const timer = setInterval(() => {
-      if (!isFinite(seconds)) { clearInterval(timer); return; }
-      seconds--;
-      if (seconds >= 0) {
-        secEl.textContent = seconds;
-      }
-      if (seconds <= 0) {
-        clearInterval(timer);
-        // Chuyển hướng
-        try {
-          window.location.href = TARGET_URL;
-        } catch (err) {
-          // fallback: thay thông báo nếu không chuyển được
-          countdownEl.textContent = 'Không thể chuyển hướng tự động. Nhấn nút 2.0 để tới bản mới.';
-        }
-      }
-    }, 1000);
+    // Hàm random cực nhanh
+    const idx = crypto.getRandomValues(new Uint32Array(1))[0] % sites.length;
+    location.replace(sites[idx]); // chuyển ngay, không cần chờ load
   </script>
+</head>
+<body>
 </body>
 </html>
