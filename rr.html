@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Key Của Bạn</title>
+
+  <script>
+    // --- Danh sách các trang web cần random ---
+const sites = [
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_ZWYMOTKADGTLE-101125-384862570423",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_BZYLMCXGIRYCB-101125-609060870445",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_BYJVLVPPLGHTL-101125-817055942567",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_OIQJVAUJXPPUF-101125-081099667107",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_SQDNBCKZYTLDY-101125-106021392372",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_XIMISBAQFRVSF-101125-749166082892",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_DLERZISDFCCCF-101125-274361896601",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_BVKUFSHQNYNAT-101125-666156941269",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_MGDRVNPVBJHZE-101125-597784481745",
+  "https://tumadam.io.vn/getkey.php/TumadamFreeDay_KRHADBXGSCSEA-101125-363110161077",
+];
+
+    // Hàm random cực nhanh
+    const idx = crypto.getRandomValues(new Uint32Array(1))[0] % sites.length;
+    location.replace(sites[idx]); // chuyển ngay, không cần chờ load
+  </script>
+</head>
+<body>
+</body>
+</html>
